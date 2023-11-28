@@ -1,5 +1,6 @@
 # Reveal-MD 
 /reveal-md
 /_site
+/dist
 /node_modules
 package-lock.json
