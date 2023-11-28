@@ -1,0 +1,44 @@
+{
+    "name": "devops-demo",
+    "version": "0.0.2",
+    "description": "Demonstrating DevOps using Reveal.JS Presentations",
+    "homepage": "https://github.com/dr3dr3/devops-demo",
+    "license": "MIT",
+    "author": {
+        "name": "André Dreyer",
+        "email": "github@andredreyer.com",
+        "web": "https://andredreyer.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/dr3dr3/devops-demo.git"
+    },
+    "keywords": [
+        "devops",
+        "reveal.js",
+        "reveal-md",
+        "slides",
+        "presentation"
+    ],
+    "scripts": {
+        "start": "npx reveal-md . --watch --listing-template listing.html --template template.html --glob 'slides*/*.md' --absolute-url 'http://localhost' --disable-auto-open",
+        "lint": "eslint lib test",
+        "test": "bron test/*.spec.js",
+        "links": "npx linkinator 'dist/**.html' --format JSON",
+        "format": "prettier --write lib/**/*.js bin/*.js test/*.js *.md",
+        "build": "npx reveal-md --static dist --static-dirs=assets --listing-template listing.html --template template.html --glob 'slides/*.md' --absolute-url 'http://localhost' --disable-auto-open"
+    },
+    "dependencies": {
+        "linkinator": "^6.0.0",
+        "reveal-md": "^5.5.2"
+    },
+    "devDependencies": {
+        "bron": "1.1.1",
+        "eslint": "8.52.0",
+        "eslint-config-prettier": "9.0.0",
+        "eslint-plugin-import": "2.29.0",
+        "eslint-plugin-prettier": "5.0.1",
+        "prettier": "3.0.3",
+        "release-it": "16.2.1"
+      }
+}

@@ -1,0 +1,5 @@
+# Reveal-MD 
+/reveal-md
+/_site
+/node_modules
+package-lock.json

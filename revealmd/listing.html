@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{pageTitle}}</title>
+    <meta property="og:title" content="Version Slide" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://localhost/revealmd/assets/featured-slide.jpg" />
+    <meta property="og:url" content="http://localhost" />
+    <link rel="shortcut icon" href="{{{base}}}/favicon.ico" />    
+    <link rel="stylesheet" href="{{{themeUrl}}}" id="theme" />    
+    <style>
+      body {
+        text-align: center;
+        background-color: var(--r-background-color); }
+      h1 {
+        padding: 100px; }
+    </style>    
+  </head>
+
+  <body>
+    <div class="reveal">
+      <h1>Presented by André</h1>
+
+      <ul>
+        {{#files}}
+        <li>
+          <a href="{{filePath}}" title="{{title}}">
+            {{#title}}{{.}}{{/title}}
+          </a>
+        </li>
+        {{/files}}
+      </ul>
+
+    </div>
+  </body>
+</html>
