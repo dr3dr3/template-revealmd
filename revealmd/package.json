@@ -26,7 +26,7 @@
         "test": "bron test/*.spec.js",
         "links": "npx linkinator 'out/**.html' --format JSON",
         "format": "prettier --write lib/**/*.js bin/*.js test/*.js *.md",
-        "build": "npx reveal-md --static out --static-dirs=assets --listing-template listing.html --template template.html --glob 'slides/*.md' --absolute-url $SITE_URL --disable-auto-open"
+        "build": "npx reveal-md --static out --static-dirs=assets --listing-template listing.html --template template.html --glob 'slides/*.md' --absolute-url 'https://dr3dr3.github.io/template-revealmd' --disable-auto-open"
     },
     "dependencies": {
         "linkinator": "^6.0.0",
