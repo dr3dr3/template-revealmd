@@ -3,12 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <title>{{pageTitle}}</title>
+    {{#absoluteUrl}}
     <meta property="og:title" content="Version Slide" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="./{{{base}}}/assets/featured-slide.jpg" />
-    <meta property="og:url" content="{{{base}}}" />
-    <link rel="shortcut icon" href="./{{{base}}}/favicon.ico" />    
-    <link rel="stylesheet" href="./{{{themeUrl}}}" id="theme" />    
+    <meta property="og:image" content="{{{absoluteUrl}}}/assets/featured-slide.jpg" />
+    <meta property="og:url" content="{{{absoluteUrl}}}" />
+    <link rel="shortcut icon" href="{{{absoluteUrl}}}/favicon.ico" />    
+    <link rel="stylesheet" href="{{{absoluteUrl}}}/{{{themeUrl}}}" id="theme" />  
+    {{/absoluteUrl}}  
     <style>
       body {
         text-align: center;

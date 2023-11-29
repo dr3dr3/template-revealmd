@@ -1,6 +1,5 @@
 ---
 title: Style Guide
-theme: theme-light.css
 ---
 
 <!-- .slide: id="title-slide" -->
