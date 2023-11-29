@@ -2,7 +2,7 @@
     "concurrency": 100,
     "config": "string",
     "recurse": true,
-    "skip": ["http://localhost","https://linkedin.com/in/andredreyer","https://twitter.com/andre_dreyer"],
+    "skip": [],
     "format": "json",
     "verbosity": "info",
     "timeout": 0,
