@@ -34,13 +34,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 #### Heading 4
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Used for sub-titles
 
 ------
 
 ##### Heading 5
 
-###### Heading 6 -For footnotes, references, etc
+###### Heading 6 - for footnotes, references, etc
 
 ------
 

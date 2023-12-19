@@ -5,11 +5,11 @@ title: DevOps Demo - Blue / Green Deployments
 <!-- .slide: id="title-slide" -->
 # DevOps Demo
 
-## Blue / Green Deployments
+#### Blue / Green Deployments
 
 ---
 
-## Blue / Green - Model #1
+## Pattern #1
 
 |          | Primary    | Limited   |
 | -------- | ---------- | --------- |
@@ -18,7 +18,7 @@ title: DevOps Demo - Blue / Green Deployments
 
 ------
 
-# Blue / Green - Model #1
+## Pattern #1
 
 Confirmed value to most users with fewer rollbacks.
 
@@ -31,7 +31,7 @@ Confirmed value to most users with fewer rollbacks.
 
 ---
 
-# Blue / Green - Model #2
+## Pattern #2
 
 |          | Primary    | Limited   |
 | -------- | ---------- | --------- |
@@ -40,7 +40,7 @@ Confirmed value to most users with fewer rollbacks.
 
 ------
 
-## Blue / Green - Model #2
+## Pattern #2
 
 Faster value to all users with fast rollback ability.
 
@@ -207,4 +207,4 @@ Can do instant rollback via Host (i.e. in Vercel)
 
 Once resolved & validated in Blue, then deploy to Green
 
-Remember: Green is in effect "the backup"
+**Remember:** Green is in effect "the backup"

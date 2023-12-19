@@ -92,7 +92,15 @@
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
       function addDarkmodeWidget() {
-        new Darkmode({right:'unset',left:'32px',label:'🌗',backgroundColor:'var(--r-background-color)',buttonColorDark:'var(--r-main-color)'}).showWidget();
+        new Darkmode({
+          right:'unset',
+          left:'32px',
+          time: '0.0s',
+          label:'🌗',
+          backgroundColor:'var(--r-background-color)',
+          buttonColorDark:'var(--r-main-color)',
+          autoMatchOsTheme: true
+        }).showWidget();
       }
       window.addEventListener('load', addDarkmodeWidget);
     </script>
