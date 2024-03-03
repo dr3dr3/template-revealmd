@@ -36,7 +36,7 @@
     "test": "echo 'no tests'",
     "links": "npx linkinator 'out/**.html' --format JSON",
     "format": "prettier --write lib/**/*.js bin/*.js test/*.js *.md",
-    "build": "npx reveal-md --static out --static-dirs=assets --listing-template templates/listing.html --template templates/template.html --glob 'slides/*.md' --absolute-url $SITE_URL --disable-auto-open"
+    "build": "npx reveal-md --static out --static-dirs=assets --listing-template listing.html --template template.html --glob 'slides/*.md' --absolute-url $SITE_URL --disable-auto-open"
   },
   "dependencies": {
     "debug": "4.3.4",
