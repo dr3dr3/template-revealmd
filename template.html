@@ -23,6 +23,25 @@
 
     {{#watch}}
 
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      const darkModeOptions = {
+        right:'unset',
+          left:'32px',
+          time: '0.0s',
+          label:'🌗',
+          backgroundColor:'var(--r-background-color)',
+          buttonColorDark:'var(--r-main-color)',
+          saveInCookies: true,
+          autoMatchOsTheme: false,
+      };
+      function addDarkmodeWidget() {
+        new Darkmode(darkModeOptions).showWidget();
+      }
+      window.addEventListener('load', addDarkmodeWidget);
+      console.log(window.localStorage.getItem('darkmode'));
+    </script>
+
     <script>
       document.write(
         '<script src="http://' +
@@ -33,7 +52,7 @@
     </script>
     {{/watch}}
   </head>
-  <body>
+  <body onload="window.localStorage.setItem('darkmode', 'true')">
     <div class="reveal">
       <div class="slides">{{{slides}}}</div>
     </div>
@@ -89,21 +108,5 @@
       Reveal.initialize(options);
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-    <script>
-      function addDarkmodeWidget() {
-        new Darkmode({
-          right:'unset',
-          left:'32px',
-          time: '0.0s',
-          label:'🌗',
-          backgroundColor:'var(--r-background-color)',
-          buttonColorDark:'var(--r-main-color)',
-          autoMatchOsTheme: true
-        }).showWidget();
-      }
-      window.addEventListener('load', addDarkmodeWidget);
-    </script>
-    
   </body>
 </html>

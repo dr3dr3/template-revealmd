@@ -208,3 +208,18 @@ Can do instant rollback via Host (i.e. in Vercel)
 Once resolved & validated in Blue, then deploy to Green
 
 **Remember:** Green is in effect "the backup"
+
+---
+
+<section>
+<iframe 
+    name="example-feature-flag-dark-launch" 
+    data-src="http://localhost:3000/examples/feature-flags/prod-testing?mode=testing" 
+    data-preload 
+    width="100%" height="500px" 
+    referrerpolicy="no-referrer" 
+    sandbox="allow-scripts allow-same-origin"
+    isolation="isolate"
+    seamless
+    />
+</section>
