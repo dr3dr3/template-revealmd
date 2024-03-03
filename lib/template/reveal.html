@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -19,9 +19,7 @@
 
     {{#cssPaths}}
     <link rel="stylesheet" href="{{{.}}}" />
-    {{/cssPaths}}
-
-    {{#watch}}
+    {{/cssPaths}} {{#watch}}
 
     <script>
       document.write(
@@ -35,10 +33,20 @@
   </head>
   <body>
     <div class="reveal">
-      <div class="slides">{{{slides}}}</div>
+      <div class="slides">
+        <section data-markdown {{{slidifyAttributes}}}>
+          <textarea data-template>
+            {{{markdown}}}
+          </textarea>
+        </section>
+      </div>
     </div>
 
     <script src="{{{base}}}/dist/reveal.js"></script>
+
+    {{#mermaidOptionsStr}}
+    <script src="{{{base}}}/mermaid/dist/mermaid.min.js"></script>
+    {{/mermaidOptionsStr}}
 
     <script src="{{{base}}}/plugin/markdown/markdown.js"></script>
     <script src="{{{base}}}/plugin/highlight/highlight.js"></script>
@@ -67,6 +75,9 @@
         center: true,
         transition: 'default', // none/fade/slide/convex/concave/zoom
         slideNumber: true,
+        highlight: {
+          highlightOnLoad: false
+        },
         plugins: [
           RevealMarkdown,
           RevealHighlight,
@@ -88,6 +99,22 @@
 
     <script>
       Reveal.initialize(options);
+      Reveal.addEventListener('ready', function (event) {
+        const blocks = Reveal.getRevealElement().querySelectorAll('pre code:not(.mermaid)');
+        const hlp = Reveal.getPlugin('highlight');
+        blocks.forEach(hlp.highlightBlock);
+      });
     </script>
+
+    {{#mermaidOptionsStr}}
+    <script>
+      const mermaidOptions = extend({ startOnLoad: false }, {{{mermaidOptionsStr}}});
+      mermaid.startOnLoad = false;
+      mermaid.initialize(mermaidOptions);
+      const cb = function (event) { mermaid.init(mermaidOptions, '.stack.present>.present pre code.mermaid'); };
+      Reveal.addEventListener('ready', cb);
+      Reveal.addEventListener('slidetransitionend', cb);
+    </script>
+    {{/mermaidOptionsStr}}
   </body>
 </html>
