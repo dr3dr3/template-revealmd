@@ -1,0 +1,74 @@
+{
+  "name": "devops-demo",
+  "version": "1.0.0",
+  "description": "Demonstrating DevOps using Reveal.JS Presentations",
+  "homepage": "https://github.com/dr3dr3/devops-demo",
+  "license": "MIT",
+  "bin": {
+    "reveal-md": "bin/reveal-md.js"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "type": "module",
+  "author": {
+    "name": "André Dreyer",
+    "email": "github@andredreyer.com",
+    "web": "https://andredreyer.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dr3dr3/devops-demo.git"
+  },
+  "keywords": [
+    "devops",
+    "reveal.js",
+    "reveal-md",
+    "slides",
+    "presentation"
+  ],
+  "scripts": {
+    "start": "npx reveal-md . --watch --listing-template listing.html --template template.html --glob 'slides*/*.md' --absolute-url 'http://localhost:1948' --disable-auto-open",
+    "rmd-test": "mv reveal-md.json reveal.json listing.html template.html custom && node --test test/*.spec.js && cp -a custom/. ./",
+    "custom": "cp -a custom/. ./",
+    "lint": "eslint lib test",
+    "test": "echo 'no tests'",
+    "links": "npx linkinator 'out/**.html' --format JSON",
+    "format": "prettier --write lib/**/*.js bin/*.js test/*.js *.md",
+    "build": "npx reveal-md --static out --static-dirs=assets --listing-template listing.html --template template.html --glob 'slides/*.md' --absolute-url $SITE_URL --disable-auto-open"
+  },
+  "dependencies": {
+    "debug": "4.3.4",
+    "express": "4.18.2",
+    "fs-extra": "11.2.0",
+    "glob": "10.3.10",
+    "highlight.js": "11.9.0",
+    "json5": "2.2.3",
+    "livereload": "0.9.3",
+    "lodash": "4.17.21",
+    "mermaid": "10.8.0",
+    "mustache": "4.2.0",
+    "open": "10.0.3",
+    "reveal.js": "5.0.4",
+    "serve-favicon": "2.5.0",
+    "update-notifier": "7.0.0",
+    "yaml-front-matter": "4.1.1",
+    "yargs-parser": "21.1.1"
+  },
+  "optionalDependencies": {
+    "puppeteer": "22.1.0"
+  },
+  "devDependencies": {
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-prettier": "5.1.3",
+    "linkinator": "^6.0.4",
+    "prettier": "3.2.5",
+    "release-it": "17.1.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
